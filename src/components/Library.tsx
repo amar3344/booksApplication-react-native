@@ -1,11 +1,29 @@
-import { Text, View,StyleSheet } from 'react-native'
+import { Text, View,StyleSheet,Image,ScrollView } from 'react-native'
 import React, { Component } from 'react'
 
 export class Library extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.textLibrary}>Library</Text>
+        <Text>My Library</Text>
+        <View>
+          <ScrollView>
+            <View>
+              <Text>Saved Books</Text>
+            </View>
+            <View>
+              <Text>In Progress</Text>
+            </View>
+            <View>
+              <Text>Completed</Text>
+            </View>
+          </ScrollView>
+        </View>
+        <View>
+          <ScrollView>
+            <Image source={require('../assets/homeimg/goodguy.png')}/>
+          </ScrollView>
+        </View>
       </View>
     )
   }
