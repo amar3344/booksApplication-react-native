@@ -1,5 +1,5 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import 'react-native-gesture-handler';
+import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -10,6 +10,7 @@ import SignUpPage from './src/components/SignUpPage'
 import LoginPage from './src/components/LoginPage'
 import VerifyCode from './src/components/VerifyCode';
 import BottomNavigation from './src/components/BottomNavigation';
+import DrawerNaviogation from './src/components/DrawerNaviogation';
 
 const Stack = createStackNavigator()
 
@@ -25,6 +26,7 @@ export class App extends Component {
           <Stack.Screen name="ForgotPage" component={ForgotPage} options={{headerShown:false}}/>
           <Stack.Screen name="VerifyCode" component={VerifyCode} options={{headerShown:false}}/>
           <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{headerShown:false}}/>
+          <Stack.Screen name="DrawerNaviogation" component={DrawerNaviogation} options={{headerShown:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     )

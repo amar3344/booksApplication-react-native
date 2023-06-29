@@ -21,6 +21,7 @@ export class PasswordPage extends Component<IProps,IState> {
   handleLoginPage=()=>{
     if(this.state.passwordInput !== ''){
       this.props.navigation.navigate('BottomNavigation')
+      this.props.navigation.navigate('DrawerNavigation')
     }
   }
 

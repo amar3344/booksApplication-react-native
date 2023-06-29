@@ -1,4 +1,4 @@
-import {Text, View, Image, StyleSheet, ScrollView,Modal} from 'react-native';
+import {Text, View, Image, StyleSheet, ScrollView} from 'react-native';
 import React, {Component} from 'react';
 import FireIcon from 'react-native-vector-icons/SimpleLineIcons';
 import Feather from 'react-native-vector-icons/Feather';
@@ -252,19 +252,21 @@ export class Home extends Component {
             <Image source={require('../assets/homeimg/goodguy.png')} />
           </View>
         </ScrollView>
-        <View style={styles.modalView}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={true}
-            style={styles.bottommusicPlayer}
-            >
-            <View>
-              <View >
-                <Text>Hello World!</Text>
-              </View>
+        <View style={styles.musicContainer}>
+          <Image style={styles.musicImage} source={require('../assets/homeimg/f.png')}/>
+          <View style={styles.listingCon}>
+            <Text style={styles.continueText}>Continue Listing</Text>
+            <Text>Managers who want to create
+                positive work enviroments...</Text>
+          </View>
+          <View style={styles.musicControls}>
+            <View style={styles.controls}>
+              <Ionicons name="ios-play-outline" style={styles.control} />
             </View>
-          </Modal>
+            <View style={styles.controls}>
+              <Ionicons name="play-forward-outline" style={styles.control}/>
+            </View>
+          </View>
         </View>
       </View>
     );
@@ -274,6 +276,57 @@ export class Home extends Component {
 export default Home;
 
 const styles = StyleSheet.create({
+
+  continueText:{
+    fontSize:14,
+    fontFamily:"Goutham",
+    fontWeight:'600',
+    color:'#fff'
+
+  },
+
+  control:{
+    width:15,
+    height:15,
+    color:"#000",
+  },
+
+  controls:{
+    backgroundColor:"#CDE7BE",
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:50,
+    padding:10,
+    marginRight:5,
+  },
+
+  musicControls:{
+    flexDirection:'row',
+    alignItems:'center',
+    paddingRight:30,
+
+  },
+
+  listingCon:{
+    paddingTop:10,
+    PaddingBottom:10,
+    paddingLeft:5,
+    width:'65%',
+  },
+
+  musicImage:{
+    height:'100%',
+    width:40,
+    paddingTop:10,
+  },
+
+  musicContainer:{
+    flexDirection:'row',
+    alignItems:'center',
+    borderTopWidth:2,
+    borderColor:'#900',
+    height:70,
+  },
   labelImage: {
     marginTop: 20,
     marginRight: 10,
@@ -281,8 +334,7 @@ const styles = StyleSheet.create({
   },
 
   modalView: {
-    position:'relative',
-    bottom:0,
+    backgroundColor:'#000'
   },
 
   bottommusicPlayer: {
@@ -373,6 +425,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#282828',
     padding: 10,
     gap: 10,
+    flex:1,
   },
 
   goodafternooncon: {

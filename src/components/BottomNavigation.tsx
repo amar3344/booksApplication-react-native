@@ -19,36 +19,36 @@ const Tab = createBottomTabNavigator()
 
 export class BottomNavigation extends Component<IProps> {
   render() {
-    return (
+    return (<>
       <Tab.Navigator initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#fff',
-        tabBarInactiveBackgroundColor:'#000',
-        tabBarActiveBackgroundColor:'#fff',
+        tabBarInactiveBackgroundColor:'#fff',
+        tabBarActiveBackgroundColor:'#000',
       }}>
         <Tab.Screen options={{
           tabBarLabel: 'Home',
           headerShown:false,
           tabBarIcon: ({ color, size }) => (
-            <HomeIcon name="home" color={'#fff'} size={20} />
+            <HomeIcon name="home" color={color} size={size} />
           ),
         }} name="Home" component={Home}/>
         <Tab.Screen options={{
           tabBarLabel: 'explore',
           headerShown:false,
           tabBarIcon: ({ color, size }) => (
-            <Search name="search" color={'#fff'} size={20} />
+            <Search name="search" color={color} size={size} />
           ),
         }} name="Explore" component={Explore}/>
         <Tab.Screen options={{
           tabBarLabel: 'library',
           headerShown:false,
           tabBarIcon: ({ color, size }) => (
-            <LibraryIcon name="library-outline" color={'#fff'} size={20} />
+            <LibraryIcon name="library-outline" color={color} size={size} />
           ),
         }} name="Library" component={Library}/>
-      </Tab.Navigator>
-    )
+      </Tab.Navigator> 
+      </>)
   }
 }
 
